@@ -35,7 +35,7 @@ function Login(){
             } 
             else {
 
-                 setMessage("帳號或密碼錯誤");
+                 setMessage("帳號或密碼錯誤，請重新登入");
             }
 
         })
