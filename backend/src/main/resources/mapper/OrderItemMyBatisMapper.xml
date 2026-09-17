@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="com.tim.document.web1.mapper.OrderItemMyBatisMapper">
+	<select id="findAll"
+			resultType="com.tim.document.web1.model.OrderItem">
+		
+		SELECT 
+			id,
+			order_id AS orderId,
+			product_id AS productId,
+			quantity,
+			unit_price AS unitPrice
+		From order_items
+	</select>
+	<select id="findById"
+		parameterType="java.lang.Integer"
+		resultType="com.tim.document.web1.model.OrderItem">
+		
+		SELECT 
+			id,
+			order_id AS orderId,
+			product_id AS productId,
+			quantity,
+			unit_price AS unitPrice
+		From order_items
+		WHERE id=#{id}
+	</select>
+	
+	<select id="findByOrderId"
+        parameterType="java.lang.Integer"
+        resultType="com.tim.document.web1.model.OrderItem">
+
+    	SELECT
+        	oi.id,
+        	oi.order_id AS orderId,
+        	oi.product_id AS productId,
+        	p.name AS productName,
+        	oi.quantity,
+        	oi.unit_price AS unitPrice
+    		FROM order_items oi
+    		INNER JOIN products p
+        	ON oi.product_id = p.id
+    	WHERE oi.order_id = #{orderId}
+
+	</select>
+	
+	<insert id="insert"
+			parameterType="com.tim.document.web1.model.OrderItem"
+	>
+		INSERT INTO order_items(
+			order_id,
+			product_id,
+			quantity,
+			unit_price
+		)
+		VALUES
+		(
+			#{orderId},
+			#{productId},
+			#{quantity},
+			#{unitPrice}
+		)
+	</insert>
+
+</mapper>

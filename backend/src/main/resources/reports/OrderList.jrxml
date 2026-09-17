@@ -1,0 +1,50 @@
+<!-- Created with Jaspersoft Studio version 7.0.8.final using JasperReports Library version 7.0.8-6f896111  -->
+<jasperReport name="OrderList" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="46e2fa61-8e49-425c-989a-b6d28ecf4fec">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<query language="sql"><![CDATA[]]></query>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="userId" class="java.lang.Integer"/>
+	<field name="orderDateTime" class="java.time.LocalDateTime"/>
+	<field name="totalPrice" class="java.lang.Integer"/>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+	</title>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="61" splitType="Stretch">
+		<element kind="staticText" uuid="c6529974-3701-494b-9477-63b8d8aea0e1" x="10" y="15" width="100" height="30">
+			<text><![CDATA[ID]]></text>
+		</element>
+		<element kind="staticText" uuid="025787ec-ce7b-41a7-b79f-b35f242345ae" x="140" y="15" width="100" height="30">
+			<text><![CDATA[UserID]]></text>
+		</element>
+		<element kind="staticText" uuid="e4b64e61-1ea0-40dd-aca7-87ce4cf98001" x="280" y="15" width="100" height="30">
+			<text><![CDATA[OrderDate]]></text>
+		</element>
+		<element kind="staticText" uuid="5320a96f-d6dd-43f2-92c2-672a315aa443" x="410" y="15" width="100" height="30">
+			<text><![CDATA[TotalPrice]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<element kind="textField" uuid="b08b49a7-5126-4337-80ec-a655fffaf683" x="10" y="20" width="100" height="30">
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2aee4fae-ad81-4c38-974d-ee5353665bb5"/>
+				<expression><![CDATA[$F{id}]]></expression>
+			</element>
+			<element kind="textField" uuid="16893118-95a5-450d-8010-cbb704dd3da1" x="140" y="20" width="100" height="30">
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="95a4b892-9ea8-4e04-b8d8-2b60d51e56ab"/>
+				<expression><![CDATA[$F{userId}]]></expression>
+			</element>
+			<element kind="textField" uuid="3f2786f5-3943-48bd-a723-13aa3c89835d" x="280" y="20" width="100" height="30">
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8a38d7df-72a1-4b2e-8092-1d241db0159c"/>
+				<expression><![CDATA[$F{orderDateTime}]]></expression>
+			</element>
+			<element kind="textField" uuid="bf9f54d4-1a40-491f-91c7-39886c194e8b" x="410" y="20" width="100" height="30">
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1f1154fa-7ba3-457a-95b6-7930a05c7dba"/>
+				<expression><![CDATA[$F{totalPrice}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

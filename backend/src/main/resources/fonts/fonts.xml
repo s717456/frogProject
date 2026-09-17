@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<fontFamilies>
+
+    <fontFamily name="SimHei">
+
+        <normal>
+            <ttf>fonts/SimHei.ttf</ttf>
+        </normal>
+		
+		<!-- 編碼方式 -->
+        <pdfEncoding>Identity-H</pdfEncoding>
+
+		<!-- 將字型崁入pdf -->
+        <pdfEmbedded>true</pdfEmbedded>
+
+    </fontFamily>
+
+</fontFamilies>
