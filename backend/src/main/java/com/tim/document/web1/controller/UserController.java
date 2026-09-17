@@ -59,6 +59,6 @@ public class UserController {
 	@PostMapping("/logout")
 	public ResponseEntity<String>logout(HttpSession session){
 		session.invalidate();//讓session失效
-		return ResponseEntity.ok("登出成功");
+		return ResponseEntity.ok("登出成功!");
 	}
 }
