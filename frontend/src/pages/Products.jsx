@@ -146,59 +146,76 @@ function Products() {
 
 
     return (
-        <div>
+        <div className="container mt-4">
 
-            <h1>3C 商品列表</h1>
+        <h1 className="text-center mb-4">
+            3C 商品列表
+        </h1>
 
-            {products.map(product => (
+        {/* Bootstrap 商品表格 */}
+        <table className="table table-bordered table-striped table-hover text-center">
 
-                <div key={product.id}>
+            <thead className="table-dark">
+                <tr>
+                    <th>商品編號</th>
+                    <th>商品名稱</th>
+                    <th>分類</th>
+                    <th>價格</th>
+                    <th>庫存</th>
+                </tr>
+            </thead>
 
-                    <h2>{product.name}</h2>
+            <tbody>
+                {products.map(product => (
+                    <tr key={product.id}>
+                        <td>{product.id}</td>
+                        <td>{product.name}</td>
+                        <td>{product.category}</td>
+                        <td>{product.price}</td>
+                        <td>{product.stock}</td>
+                    </tr>
+                ))}
+            </tbody>
 
-                    <p>
-                        分類：{product.category}
-                    </p>
+        </table>
 
-                    <p>
-                        價格：{product.price}
-                    </p>
+        <br />
 
-                    <p>
-                        庫存：{product.stock}
-                    </p>
+        <button
+            onClick={() => setCurrentPage(1)}
+            disabled={currentPage === 1}>
+            前10筆
+        </button>
 
-                </div>
+        <button
+            onClick={() => setCurrentPage(2)}
+            disabled={currentPage === 2}>
+            後10筆
+        </button>
 
-            ))}<br />
+        <br /><br />
 
-            <button
-                onClick={() => setCurrentPage(1)}
-                disabled={currentPage === 1}>
-                前10筆
-            </button>
+        <button onClick={downloadReport}>
+            匯出訂單 PDF
+        </button>
 
-            <button
-                onClick={() => setCurrentPage(2)}
-                disabled={currentPage === 2}>
-                後10筆
-            </button><br /><br />
+        <br />
 
-            <button onClick={downloadReport}>
-                匯出訂單 PDF
-            </button><br />
+        <button onClick={downloadProductReport}>
+            匯出產品 PDF
+        </button>
 
-            <button onClick={downloadProductReport}>
-                匯出產品 PDF
-            </button><br /><br />
+        <br /><br />
 
-            <button onClick={goHome}>
-                回首頁
-            </button><br />
+        <button onClick={goHome}>
+            回首頁
+        </button>
 
-            <button onClick={handleLogout}>
-                登出
-            </button>
+        <br />
+
+        <button onClick={handleLogout}>
+            登出
+        </button>
 
         </div>
     );
